@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Doomed Scroll</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+    <script type="text/javascript">
+
+        (function () {
+            emailjs.init({
+                publicKey: "4-alAVcv6uG8RdpVI",
+            });
+        })();
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                emailjs.sendForm(
+                    'service_n317q81',
+                    'template_p1276d7',
+                    this
+                ).then(
+                    function () {
+                        console.log('SUCCESS!');
+                        alert('Message sent successfully!');
+                        document.getElementById('contact-form').reset();
+                    },
+                    function (error) {
+                        console.log('FAILED...', error);
+                        alert('Failed to send message. Please try again.');
+                    }
+                );
+            });
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a class="navbar-item" href="index.html">
+                <source srcset="/shared-assets/images/examples/surfer.jpg" media="(orientation: portrait)" />
+                <img src="/Media/June 06, 2026 - 67 trip - _DSC2615.jpg" alt="Plane" />
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a class="navbar-item" href="index.html">
+                    Home
+                </a>
+
+                <a class="navbar-item" href="About.html">
+                    About
+                </a>
+                <a class="navbar-item" href="Contact.html">
+                    Contact
+                </a>
+
+
+            </div>
+
+
+        </div>
+    </nav>
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-centered">
+                Contact
+            </h1>
+            <p class="subtitle has-text-centered">
+                I'd love to here your thoughts
+            </p>
+        </div>
+        <form id="contact-form">
+
+            <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                    <input class="input" type="text" name="name" placeholder="Cool Name" required>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control has-icons-left">
+                    <input class="input" type="email" name="email" placeholder="coolperson@gmail.com" required>
+                    <span class="icon is-small is-left">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Message</label>
+                <div class="control">
+                    <textarea class="textarea" name="message" placeholder="Enter your message..." required></textarea>
+                </div>
+            </div>
+
+            <div class="field">
+                <div class="control">
+                    <button class="button is-primary" type="submit">
+                        Send Message
+                    </button>
+                </div>
+            </div>
+
+        </form>
+    </section>
+    MAKE THIS WORK!
+</body>
+
+</html>
